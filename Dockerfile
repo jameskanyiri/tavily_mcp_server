@@ -10,11 +10,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements file
-COPY mcp_servers/tavily/requirements.txt .
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the server code
-COPY mcp_servers/tavily/src /app/src
+COPY src /app/src
 
 # Create a sample .env file (optional and for documentation/testing only)
 RUN echo "TAVILY_API_KEY=your_api_key\nTAVILY_MCP_SERVER_PORT=5002" > .env

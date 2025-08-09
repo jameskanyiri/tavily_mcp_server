@@ -44,8 +44,8 @@ Environment variables:
 - 1) Clone repository and cd into the Tavily server directory
 
 ```bash
-git clone https://github.com/Klavis-AI/klavis.git
-cd klavis/mcp_servers/tavily
+git clone https://github.com/jameskanyiri/tavily_mcp_server.git
+cd tavily_mcp_server
 ```
 
 2) Create `.env`
@@ -80,13 +80,13 @@ The server exposes:
 
 ```bash
 # from repo root
-docker build -t klavis-tavily -f mcp_servers/tavily/Dockerfile .
+docker build -t tavily_mcp_server -f Dockerfile .
 
 # run
 docker run --rm -p 5002:5002 \
   -e TAVILY_API_KEY=tvly-YOUR_API_KEY \
   -e TAVILY_MCP_SERVER_PORT=5002 \
-  klavis-tavily
+  tavily_mcp_server
 ```
 
 ---
